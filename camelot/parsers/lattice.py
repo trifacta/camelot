@@ -210,8 +210,9 @@ class Lattice(BaseParser):
         return t
 
     def _generate_image(self):
-        convert_from_path(self.filename, output_folder=self.rootname, fmt="png", output_file='1.png')
-        self.imagename = str(self.rootname) + '1.png'
+        self.imagename = "".join([self.rootname, "-1.png"])
+        convert_from_path(self.filename, output_folder=os.path.dirname(self.rootname), fmt="png",
+                          output_file=os.path.basename(self.rootname))
 
     def _generate_table_bbox(self):
         def scale_areas(areas):
