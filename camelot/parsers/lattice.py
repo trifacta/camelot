@@ -8,7 +8,7 @@ import locale
 import logging
 import warnings
 import subprocess
-import pdfbox
+from pdf2image import convert_from_path
 
 import numpy as np
 import pandas as pd
@@ -210,8 +210,8 @@ class Lattice(BaseParser):
         return t
 
     def _generate_image(self):
-        pdfbox.PDFBox().pdf_to_images(self.filename, outputPrefix=self.rootname)
-        self.imagename = str(self.rootname) + '1.jpg'
+        convert_from_path(self.filename, output_folder=self.rootname, fmt="png", output_file='1.png')
+        self.imagename = str(self.rootname) + '1.png'
 
     def _generate_table_bbox(self):
         def scale_areas(areas):
