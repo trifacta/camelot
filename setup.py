@@ -21,7 +21,7 @@ requires = [
     'pandas>=0.23.4',
     'pdfminer.six>=20200720',
     'PyPDF2>=1.26.0',
-    'python-pdfbox>=0.1.5'
+    'python-pdfbox>=0.1.5',
 ]
 
 cv_requires = [
