@@ -19,9 +19,10 @@ requires = [
     'numpy>=1.13.3',
     'openpyxl>=2.5.8',
     'pandas>=0.23.4',
-    'pdfminer.six>=20200720',
+    'pdfminer.six>=20170720',
     'PyPDF2>=1.26.0',
     'python-pdfbox>=0.1.5'
+    
 ]
 
 cv_requires = [
